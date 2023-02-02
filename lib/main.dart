@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_starter/core/config/router.router.dart';
 import 'package:flutter_starter/locator.dart';
+import 'package:flutter_starter/provider_setup.dart';
 import 'package:flutter_starter/ui/theme/theme.dart';
+import 'package:provider/provider.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 void main() {
@@ -15,12 +17,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MultiProvider(
+        providers: providers,
+        builder: (context, child) {
+              return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Starter',
       navigatorKey: StackedService.navigatorKey,
       onGenerateRoute: StackedRouter().onGenerateRoute,
       theme: AppTheme.theme,
     );
+        });
   }
 }
+
+

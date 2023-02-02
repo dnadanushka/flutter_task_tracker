@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_starter/ui/views/home/home_view_model.dart';
+import 'package:provider/provider.dart';
 import 'package:stacked/stacked.dart';
 
 class HomeView extends ViewModelBuilderWidget<HomeViewModel>{
@@ -21,7 +22,7 @@ class HomeView extends ViewModelBuilderWidget<HomeViewModel>{
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'AppLocalizations.of(context)!.title',
+              '${viewModel.title}',
             ),
             Text(
               viewModel.counter.toString(),
@@ -41,7 +42,7 @@ class HomeView extends ViewModelBuilderWidget<HomeViewModel>{
   }
 
   @override
-  viewModelBuilder(BuildContext context) => HomeViewModel();
+  viewModelBuilder(BuildContext context) => HomeViewModel(Provider.of(context));
 
   @override
   void onViewModelReady(HomeViewModel viewModel) => viewModel.init();
