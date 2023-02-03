@@ -64,8 +64,8 @@ class SampleFormModel extends BaseViewModel {
 
   Future<bool> insertTask() async {
     return _gSheetService.insertRow([
-      formGroup.control(SampleFormControls.project).value,
       formGroup.control(SampleFormControls.date).value,
+      formGroup.control(SampleFormControls.project).value,
       formGroup.control(SampleFormControls.workType).value,
       formGroup.control(SampleFormControls.startTime).value.toString(),
       formGroup.control(SampleFormControls.endTime).value.toString(),

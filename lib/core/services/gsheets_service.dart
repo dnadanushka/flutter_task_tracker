@@ -32,14 +32,17 @@ class GSheetService {
     }
   }
 
-  Future<String> getValues() async {
+  Future<List<List<String>>> getValues() async {
     await initService();
-    return (await sheet!.values.lastRow()).toString();
+    return (await sheet!.values.allRows(fromRow: 2)).toList();
   }
 
   Future<bool> insertRow(List<String> list) async{
     await initService();
-    return sheet!.values.appendRow(list);
+    String previousID = (await sheet!.values.lastRow())![0];
+    int id = previousID == 'ID' ? 1 : int.parse(previousID) +1 ;
+    
+    return sheet!.values.appendRow([id.toString(), ...list]);
   }
 
 

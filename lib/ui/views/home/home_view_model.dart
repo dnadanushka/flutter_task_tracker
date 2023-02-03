@@ -23,9 +23,8 @@ class HomeViewModel extends BaseViewModel{
     _navigationService.navigateTo(Routes.sampleFormView);
   }
 
-  Future<void> getDataFromSheets()async{
-    title = await _gSheetService.getValues();
-    notifyListeners();
+  Future<List<List<String>>> getDataFromSheets()async{
+    return await _gSheetService.getValues();
   }
 
   void init() async {
