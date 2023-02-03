@@ -37,8 +37,10 @@ class GSheetService {
     return (await sheet!.values.lastRow()).toString();
   }
 
-  Future<void> insertRow() async{
+  Future<bool> insertRow(List<String> list) async{
     await initService();
-    sheet!.values.appendRow([1,2,1,1,1,1,1]);
+    return sheet!.values.appendRow(list);
   }
+
+
 }

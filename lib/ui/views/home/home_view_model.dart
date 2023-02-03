@@ -14,7 +14,7 @@ class HomeViewModel extends BaseViewModel{
   HomeViewModel(this._gSheetService);
 
   void incrementCounter() async{
-   await _gSheetService.insertRow();
+   //await _gSheetService.insertRow(]);
     counter++;
     notifyListeners();
   }

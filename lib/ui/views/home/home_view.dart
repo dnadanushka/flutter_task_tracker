@@ -33,7 +33,7 @@ class HomeView extends ViewModelBuilderWidget<HomeViewModel>{
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          viewModel.incrementCounter();
+          viewModel.goForm();
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
