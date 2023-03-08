@@ -10,20 +10,25 @@ import 'package:flutter_starter/ui/views/home/home_view.dart' as _i3;
 import 'package:flutter_starter/ui/views/sample_form/sample_form_view.dart'
     as _i4;
 import 'package:flutter_starter/ui/views/splash/splash_view.dart' as _i2;
+import 'package:flutter_starter/ui/views/task_tracker/task_tracker_view.dart'
+    as _i5;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i5;
+import 'package:stacked_services/stacked_services.dart' as _i6;
 
 class Routes {
-  static const splashView = '/splash-view';
+  static const splashView = '/';
 
-  static const homeView = '/';
+  static const homeView = '/home-view';
 
   static const sampleFormView = '/sample-form-view';
+
+  static const taskTrackerView = '/task-tracker-view';
 
   static const all = <String>{
     splashView,
     homeView,
     sampleFormView,
+    taskTrackerView,
   };
 }
 
@@ -40,6 +45,10 @@ class StackedRouter extends _i1.RouterBase {
     _i1.RouteDef(
       Routes.sampleFormView,
       page: _i4.SampleFormView,
+    ),
+    _i1.RouteDef(
+      Routes.taskTrackerView,
+      page: _i5.TaskTrackerView,
     ),
   ];
 
@@ -62,6 +71,12 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
+    _i5.TaskTrackerView: (data) {
+      return _i1.buildAdaptivePageRoute<dynamic>(
+        builder: (context) => const _i5.TaskTrackerView(),
+        settings: data,
+      );
+    },
   };
 
   @override
@@ -70,7 +85,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i5.NavigationService {
+extension NavigatorStateExtension on _i6.NavigationService {
   Future<dynamic> navigateToSplashView([
     int? routerId,
     bool preventDuplicates = true,
@@ -107,6 +122,20 @@ extension NavigatorStateExtension on _i5.NavigationService {
         transition,
   ]) async {
     return navigateTo<dynamic>(Routes.sampleFormView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToTaskTrackerView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.taskTrackerView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

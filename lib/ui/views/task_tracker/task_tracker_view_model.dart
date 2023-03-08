@@ -5,13 +5,13 @@ import 'package:stacked_services/stacked_services.dart';
 
 import '../../../core/services/gsheets_service.dart';
 
-class HomeViewModel extends BaseViewModel{
+class TaskTrackerViewModel extends BaseViewModel{
 
   final NavigationService _navigationService = GetIt.I.get();
   final GSheetService _gSheetService;
   int counter = 0;
   String title = '';
-  HomeViewModel(this._gSheetService);
+  TaskTrackerViewModel(this._gSheetService);
 
   void incrementCounter() async{
    //await _gSheetService.insertRow(]);
@@ -29,10 +29,6 @@ class HomeViewModel extends BaseViewModel{
 
   void init() async {
     getDataFromSheets();
-  }
-
-  void goToTaskTracker() {
-    _navigationService.navigateTo(Routes.taskTrackerView);
   }
 
 }
