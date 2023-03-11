@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/ui/views/sample_form/sample_controls.dart';
-import 'package:flutter_starter/ui/views/sample_form/sample_form_view_model.dart';
+import 'package:flutter_starter/ui/views/task_tracker/sample_form/sample_controls.dart';
+import 'package:flutter_starter/ui/views/task_tracker/sample_form/sample_form_view_model.dart';
 import 'package:flutter_starter/ui/widgets/progress_button.dart';
 import 'package:provider/provider.dart';
 import 'package:reactive_forms/reactive_forms.dart';

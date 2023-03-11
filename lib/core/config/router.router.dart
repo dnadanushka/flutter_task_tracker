@@ -7,7 +7,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter/material.dart';
 import 'package:flutter_starter/ui/views/home/home_view.dart' as _i3;
-import 'package:flutter_starter/ui/views/sample_form/sample_form_view.dart'
+import 'package:flutter_starter/ui/views/task_tracker/sample_form/sample_form_view.dart'
     as _i4;
 import 'package:flutter_starter/ui/views/splash/splash_view.dart' as _i2;
 import 'package:flutter_starter/ui/views/task_tracker/task_tracker_view.dart'
